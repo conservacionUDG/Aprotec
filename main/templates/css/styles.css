@@ -21,9 +21,12 @@ footer{
 	color: #fff;
 	font-weight: bold;
 }
+.ob-latera{
+	margin-left: -30px;
+}
 #logo1{
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 }
 #slider-aprotec{
 	width: 70%;
@@ -33,5 +36,5 @@ footer{
 	margin-top: -15px;
   	height: 22em;
   	width: 100%;
-  	padding: 10px;
+  	padding: 7px;
 }
