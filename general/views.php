@@ -5,7 +5,7 @@
 		public function index()
 		{
 			$valores = [
-			'Title' => "[Aprotec]",
+			'Title' => ":: [Aprotec] - Inicio ::",
 			'header' => load_page("general/static/header.html"),
 			'slider' => load_page("general/static/slider.html"),
 			'barra-lateral' => load_page("general/static/lateral.html"),
@@ -19,7 +19,7 @@
 		public function page($html, $titulo ,$arr= null)
 		{
 			$valores = [
-			'Title' => $titulo."::[Aprotec]",
+			'Title' => ":: [Aprotec] - ".$titulo." ::",
 			'header' => load_page("general/static/header.html"),
 			'slider' => null,
 			'barra-lateral' => load_page("general/static/lateral.html"),
