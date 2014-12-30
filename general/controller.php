@@ -25,8 +25,8 @@
 		public function index(){
 			return render_to_response(vista::index());
 		}
-		public function page($html){
-			return render_to_response(vista::page($html));
+		public function page($html,$titulo){
+			return render_to_response(vista::page($html,$titulo));
 		}
 	}
 ?>

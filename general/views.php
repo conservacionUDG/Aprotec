@@ -16,10 +16,10 @@
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
-		public function page($html ,$arr= null)
+		public function page($html, $titulo ,$arr= null)
 		{
 			$valores = [
-			'Title' => "[Aprotec]",
+			'Title' => $titulo."::[Aprotec]",
 			'header' => load_page("general/static/header.html"),
 			'slider' => null,
 			'barra-lateral' => load_page("general/static/lateral.html"),
