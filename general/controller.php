@@ -36,5 +36,29 @@
 				return render_to_response(vista::page('contactanos.html','Contactanos'));
 			}
 		}
+		public function miperfil(){
+			if ($_SESSION['user']) {
+			}else{
+				return render_to_response(vista::page('login.html','Mi perfil'));
+			}
+		}
+		public function eventos(){
+			if ($_SESSION['user']) {
+			}else{
+				return render_to_response(vista::page('login.html','Eventos'));
+			}
+		}
+		public function jobs(){
+			if ($_SESSION['user']) {
+			}else{
+				return render_to_response(vista::page('login.html','Empleos'));
+			}
+		}
+		public function reg_oferta(){
+			if ($_SESSION['user']) {
+			}else{
+				return render_to_response(vista::page('login.html','Registrar Oferta de trabajo'));
+			}
+		}
 	}
 ?>

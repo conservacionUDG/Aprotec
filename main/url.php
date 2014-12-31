@@ -7,5 +7,9 @@
 		case '/faq':{$objects['principal']->page('faq.html','Preguntas Frecuntes');}break;
 		case '/em-confian/':{$objects['principal']->page('empresas-confian.html','Empresas que confian');}break;
 		case '/contactanos/':{$objects['principal']->contactanos();}break;
+		case '/miperfil/':{$objects['principal']->miperfil();}break;
+		case '/eventos/':{$objects['principal']->eventos();}break;
+		case '/jobs/':{$objects['principal']->jobs();}break;
+		case '/reg-oferta/':{$objects['principal']->reg_oferta();}break;
 	}
 ?>

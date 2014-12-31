@@ -24,7 +24,8 @@
 			'slider' => null,
 			'barra-lateral' => load_page("general/static/lateral.html"),
 			'container' => dinamic("general/static/".$html,$arr),
-			'footer' => load_page("general/static/footer.html")
+			'footer' => load_page("general/static/footer.html"),
+			'ttitle'=> $titulo,
 			];
 			$templad = load_page("main/templates/principal.html");
 			$mostrar = remplas($valores,$templad);
