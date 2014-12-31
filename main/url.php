@@ -6,5 +6,6 @@
 		case '/calendario/':{$objects['principal']->page('calendario.html','Calendario');}break;
 		case '/faq':{$objects['principal']->page('faq.html','Preguntas Frecuntes');}break;
 		case '/em-confian/':{$objects['principal']->page('empresas-confian.html','Empresas que confian');}break;
+		case '/contactanos/':{$objects['principal']->contactanos();}break;
 	}
 ?>

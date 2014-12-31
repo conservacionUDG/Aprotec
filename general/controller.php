@@ -28,5 +28,13 @@
 		public function page($html,$titulo){
 			return render_to_response(vista::page($html,$titulo));
 		}
+		public function contactanos(){
+			if ($_POST) {
+				$this->data->guardarmsn($_POST);
+				return render_to_response(vista::page('msn_gracias.html','Gracias por ponerte en contacto'));
+			}else{
+				return render_to_response(vista::page('contactanos.html','Contactanos'));
+			}
+		}
 	}
 ?>
