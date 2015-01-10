@@ -11,5 +11,7 @@
 		case '/eventos/':{$objects['principal']->eventos();}break;
 		case '/jobs/':{$objects['principal']->jobs();}break;
 		case '/reg-oferta/':{$objects['principal']->reg_oferta();}break;
+		case '/log-in/':{$objects['principal']->log_in();}break;
+		case '/register/':{$objects['principal']->registrar();}break;
 	}
 ?>

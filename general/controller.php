@@ -60,5 +60,26 @@
 				return render_to_response(vista::page('login.html','Registrar Oferta de trabajo'));
 			}
 		}
+		public function log_in()
+		{
+			if ($_POST) {
+			}else{
+				return HttpResponse("index.php/");
+			}
+		}
+		public function registrar(){
+			if($_POST){
+				$can = $this->data->verifica($_POST['User'],$_POST['email']);
+				if ($can[0] == 0) {
+					$this->data->new_user($_POST);
+					return HttpResponse('index.php');
+				}else{
+					return render_to_response("Usuario o Correo ya Registrados");
+				}
+			}else{
+				return render_to_response(vista::page('registrar.html','Registrar usuario'));
+			}
+			
+		}
 	}
 ?>
