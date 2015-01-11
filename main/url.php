@@ -14,5 +14,6 @@
 		case 'log-in':{$objects['principal']->log_in();}break;
 		case 'register':{$objects['principal']->registrar();}break;
 		case 'news':{$objects['principal']->news();}break;
+		case 'destroy':{$objects['principal']->destroy();}break;
 	}
 ?>

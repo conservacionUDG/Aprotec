@@ -1,4 +1,12 @@
-<form action="index.php/log-in/" method="POST">
+<?php if ($_SESSION['user']):?>
+	<p class="text-center">Usuario: <?= $_SESSION['user']?></p>
+	<p class="text-center"><a href="index.php/destroy">[cerrarlogin]</a></p>
+
+<?php else:?>
+	<?php if($_SESSION['error']):?>
+		Datos Erroneos
+	<?php endif;?>
+	<form action="index.php/log-in/" method="POST">
  	<div class="form-group">
     	<label>[email/user]</label>
     	<input type="text" name="user" class="form-control" placeholder="[email/user]">
@@ -11,3 +19,4 @@
 </form>
 <p><a href="index.php/register/">[register]</a></p>
 <p><a href="index.php/recover/">[recover]</a></p>
+<?php endif;?>

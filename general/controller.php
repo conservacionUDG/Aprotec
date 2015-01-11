@@ -59,9 +59,18 @@
 				return render_to_response(vista::page('login.html','Registrar Oferta de trabajo'));
 			}
 		}
-		public function log_in()
-		{
+		public function log_in(){
 			if ($_POST) {
+				$consu = $this->data->login($_POST['user']);
+				if ($consu['pw_user'] == $_POST['pw']) {
+					$_SESSION['user'] = $consu['user_user'];
+					$_SESSION['email'] = $consu['correos_user'];
+					$_SESSION['id'] = $consu['id_user'];
+					return HttpResponse ("index.php/");
+				}else{
+					$_SESSION['error'] = TRUE;
+					return HttpResponse ("index.php/");
+				}
 			}else{
 				return HttpResponse("index.php/");
 			}
@@ -92,6 +101,13 @@
 				$post = $this->data->noticias();
 				return render_to_response(vista::page('news.html','Noticias',$post));
 			}
+		}
+		public function destroy(){
+			global $url_array;
+			if ($url_array[1] =="destroy"){
+				session_destroy();
+			}
+			return HttpResponse("");
 		}
 	}
 ?>

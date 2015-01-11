@@ -3,14 +3,17 @@
 		function __construct(){
 			parent::__construct();
 		}
-		public function consul()
-		{
+		public function login($user){
+			$query = $this->consulta("SELECT * FROM user WHERE user_user = '$user' OR correo_user = '$user' ");
+			$sea= $this->fetch_array($query);
+				return $sea;
+		}
+		public function consul(){
 			$query = $this->consulta("SELECT * FROM user ");
 			$sea= $this->fetch_array($query);
 				return $sea;
 		}
-		public function guardarmsn($arr)
-		{
+		public function guardarmsn($arr){
 			$this->consulta("INSERT INTO msn_aprotec (name_msn,email_msn,msn_msn) VALUES('$arr[nombre]','$arr[email]','$arr[msn]')" );
 		}
 		public function new_user($date){
@@ -41,5 +44,4 @@
 			return $sea;
 		}
 	}
-
 ?>
