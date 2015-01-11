@@ -13,7 +13,9 @@
 			if ($url_array[0] == '' and !$url_array[1]) {
 				return '/';
 			}elseif(!$url_array[2]){
-				return $url;
+				return $url_array[1];
+			}elseif ($url_array[2]) {
+				return $url_array[1];
 			}else{
 				return '404';
 			}
@@ -79,7 +81,20 @@
 			}else{
 				return render_to_response(vista::page('registrar.html','Registrar usuario'));
 			}
-			
+		}
+		public function news(){
+			global $url_array;
+			if ($url_array[2]) {
+				$post = $this->data->nota($url_array[2]);
+				if ($post != '') {
+					return render_to_response(vista::page('new.html',$post['tiulo_post'],$post));
+				}else{
+					return render_to_response(vista::page('404.html','Error 404'));
+				}
+			}else{
+				$post = $this->data->noticias();
+				return render_to_response(vista::page('news.html','Noticias',$post));
+			}
 		}
 	}
 ?>

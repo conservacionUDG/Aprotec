@@ -24,6 +24,22 @@
 			$sea = $this->fetch_array($query);
 			return $sea;
 		}
+		public function noticias(){
+			$query = $this->consulta("SELECT id_post, titulo_post, balazo_post FROM post_aprotec WHERE estado_post = '1';");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;			
+				}
+				return $data;
+			}else{	
+				return '';
+			}
+		}
+		public function nota($id_nota){
+			$query = $this->consulta("SELECT titulo_post, contenido_post, autor_post, fecha_post FROM post_aprotec WHERE id_post = '$id_nota' AND estado_post = '1' ");
+			$sea = $this->fetch_array($query);
+			return $sea;
+		}
 	}
 
 ?>
