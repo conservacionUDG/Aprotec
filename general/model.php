@@ -24,8 +24,8 @@
 			$sea = $this->fetch_array($query);
 			return $sea;
 		}
-		public function noticias(){
-			$query = $this->consulta("SELECT id_post, titulo_post, balazo_post FROM post_aprotec WHERE estado_post = '1';");
+		public function noticias($inicio = 0, $fin = 5){
+			$query = $this->consulta("SELECT id_post, titulo_post, balazo_post FROM post_aprotec WHERE estado_post = '1' ORDER BY id_post DESC LIMIT $inicio , $fin;");
 			if($this->numero_de_filas($query) > 0){
 				while ( $tsArray = $this->fetch_assoc($query) ) {
 					$data[] = $tsArray;			

@@ -2,7 +2,7 @@
 	class vista{
 		function __construct(){
 		}
-		public function index()
+		public static function index($arr = null)
 		{
 			$valores = [
 			'Title' => ":: [Aprotec] - Inicio ::",
@@ -10,14 +10,14 @@
 			'slider' => load_page("general/static/slider.html"),
 			'barra-lateral' => load_page("general/static/lateral.html"),
 			'form-log' => load_page("general/static/login.html"),
-			'container' => dinamic("general/static/index.html"),
+			'container' => dinamic("general/static/news.html",$arr),
 			'footer' => load_page("general/static/footer.html")
 			];
 			$templad = load_page("main/templates/principal.html");
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
-		public function page($html, $titulo ,$arr= null)
+		public static function page($html, $titulo ,$arr = null)
 		{
 			$valores = [
 			'Title' => ":: [Aprotec] - ".$titulo." ::",

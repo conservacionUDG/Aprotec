@@ -20,12 +20,9 @@
 				return '404';
 			}
 		}
-		public function prueba(){
-			$dat = $this->data->consul();
-			return JsonResponse($dat);
-		}
 		public function index(){
-			return render_to_response(vista::index());
+			$post = $this->data->noticias();
+			return render_to_response(vista::index($post));
 		}
 		public function page($html,$titulo){
 			return render_to_response(vista::page($html,$titulo));
