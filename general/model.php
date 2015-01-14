@@ -43,5 +43,21 @@
 			$sea = $this->fetch_array($query);
 			return $sea;
 		}
+		public function eventos(){
+			$query = $this->consulta("SELECT * FROM eventos_aprotec WHERE situaccion_evento = '1' AND libres_evento != '0' ORDER BY id_evento DESC;");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;			
+				}
+				return $data;
+			}else{	
+				return '';
+			}
+		}
+		public function consult($evento){
+			$query = $this->consulta("SELECT * FROM eventos_aprotec WHERE id_evento = '$evento';");
+			$sea = $this->fetch_array($query);
+			return $sea;
+		}
 	}
 ?>

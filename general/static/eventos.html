@@ -1,0 +1,25 @@
+<div class="table-responsive">
+<table class="table table-striped">
+  	<tr>
+  		<td><strong>[name]</strong></td>
+  		<td><strong>[tipo]</strong></td>
+  		<td><strong>[fecha]</strong></td>
+  		<td><strong>[capasidad]</strong></td>
+  		<td><strong>[libres]</strong></td>
+  		<td><strong>[detalles]</strong></td>
+	</tr>
+	<?php foreach ($arr as $key => $value):?>
+		<tr>
+  			<td><?=$value['name_evento']?></td>
+  			<td><?=$value['tipo_evento']?></td>
+  			<td><?=$value['fecha_evento']?></td>
+  			<td><?=$value['capasidad_evento']?></td>
+  			<td><?=$value['libres_evento']?></td>
+  			<td>
+  				<?=$value['detalles_evento']?>...
+  				<a href="index.php/eventos/<?=$value['id_evento']?>" type="button" class="btn btn-info btn-xs">[leer+]</a>
+  			</td>
+		</tr>
+	<?php endforeach;?>
+</table>
+</div>

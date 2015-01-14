@@ -38,25 +38,33 @@
 		public function miperfil(){
 			if ($_SESSION['user']) {
 			}else{
-				return render_to_response(vista::page('login.html','Mi perfil'));
+				return render_to_response(vista::page('login2.html','Mi perfil'));
 			}
 		}
 		public function eventos(){
+			global $url_array;
 			if ($_SESSION['user']) {
+				if ($url_array[2]) {
+					$dat = $this->data->consult($url_array[2]);
+					return render_to_response(vista::page('evento.html',$dat['name_evento'],$dat));
+				}else{
+					$datos = $this->data->eventos();
+					return render_to_response(vista::page('eventos.html','Eventos',$datos));
+				}
 			}else{
-				return render_to_response(vista::page('login.html','Eventos'));
+				return render_to_response(vista::page('login2.html','Eventos'));
 			}
 		}
 		public function jobs(){
 			if ($_SESSION['user']) {
 			}else{
-				return render_to_response(vista::page('login.html','Empleos'));
+				return render_to_response(vista::page('login2.html','Empleos'));
 			}
 		}
 		public function reg_oferta(){
 			if ($_SESSION['user']) {
 			}else{
-				return render_to_response(vista::page('login.html','Registrar Oferta de trabajo'));
+				return render_to_response(vista::page('login2.html','Registrar Oferta de trabajo'));
 			}
 		}
 		public function log_in(){
@@ -80,7 +88,11 @@
 				$can = $this->data->verifica($_POST['User'],$_POST['email']);
 				if ($can[0] == 0) {
 					$this->data->new_user($_POST);
-					return HttpResponse('index.php');
+					$consu = $this->data->login($_POST['User']);
+					$_SESSION['user'] = $consu['user_user'];
+					$_SESSION['email'] = $consu['correos_user'];
+					$_SESSION['id'] = $consu['id_user'];
+					return HttpResponse('index.php/');
 				}else{
 					return render_to_response("Usuario o Correo ya Registrados");
 				}
@@ -108,6 +120,21 @@
 				session_destroy();
 			}
 			return HttpResponse("");
+		}
+		public function empresas_conf(){
+			$i=0;
+			$directorio = opendir("./main/templates/complementos/img/empresas/"); //ruta actual
+			while ($archivo = readdir($directorio)){
+				if ($archivo != '.' AND $archivo != '..') {
+    				$dato[$i] = $archivo;
+    				$i++;
+				}
+			}
+			return render_to_response(vista::page('empresas-confian.html','Empresas que confian',$dato));		
+		}
+		public function recursos()
+		{
+			echo "Holas";
 		}
 	}
 ?>
