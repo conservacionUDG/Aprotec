@@ -1,0 +1,20 @@
+<div class="table-responsive">
+	<table class="table table-striped">
+  		<tr>
+	  		<td><strong>[titulo_job]</strong></td>
+	  		<td><strong>[fecha]</strong></td>
+	  		<td><strong>[localidad]</strong></td>
+	  		<td><strong>[detalles]</strong></td>
+		</tr>
+		<?php foreach ($arr as $key => $value):?>
+			<tr>
+	  			<td><?=$value['titulo_job']?></td>
+	  			<td><?=$value['fecha_job']?></td>
+	  			<td><?=$value['localidad_job']?></td>
+	  			<td>
+	  				<a href="index.php/jobs/<?=$value['id_job']?>" type="button" class="btn btn-info btn-xs">[leer+]</a>
+	  			</td>
+			</tr>
+		<?php endforeach;?>
+	</table>
+</div>

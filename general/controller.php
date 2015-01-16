@@ -56,7 +56,19 @@
 			}
 		}
 		public function jobs(){
+			global $url_array;
 			if ($_SESSION['user']) {
+				if ($url_array[2]) {
+					$dato = $this->data->job($url_array[2]);
+					if ($dato != '') {
+						return render_to_response(vista::page('job.html',$dato['titulo_job'],$dato));
+					}else{
+						return render_to_response(vista::page('404.html','Error 404'));
+					}
+				}else{
+					$dato = $this->data->jobs();
+					return render_to_response(vista::page('jobs.html',"Empleos",$dato));
+				}
 			}else{
 				return render_to_response(vista::page('login2.html','Empleos'));
 			}
@@ -74,6 +86,7 @@
 					$_SESSION['user'] = $consu['user_user'];
 					$_SESSION['email'] = $consu['correos_user'];
 					$_SESSION['id'] = $consu['id_user'];
+					$_SESSION['estado'] = $consu['estado_user'];
 					return HttpResponse ("index.php/");
 				}else{
 					$_SESSION['error'] = TRUE;
@@ -134,7 +147,18 @@
 		}
 		public function recursos()
 		{
-			echo "Holas";
+			if ($_SESSION['user']) {
+				if ($_SESSION['estado'] == 1) {
+					$datos = $this->data->rec(2);
+					return render_to_response(vista::page('recursos.html','Recursos disponibles',$datos));
+				}else{
+					$datos = $this->data->rec(3);
+					return render_to_response(vista::page('recursos.html','Recursos disponibles',$datos));
+				}
+			}else{
+				$datos = $this->data->rec(1);
+				return render_to_response(vista::page('recursos.html','Recursos disponibles',$datos));
+			}
 		}
 	}
 ?>

@@ -15,7 +15,7 @@
 	"rec":"Recursos",
 	"even":"Eventos",
 	"jobs":"Empleos",
-	"reg-of":"Registrar oferta lavoral",
+	"reg-of":"Registrar oferta laboral",
 	"em-con":"Empresas que confian",
 	"register":"Registrar Nuevo Usuario",
 	"recover":"Recuperar Contraseña",
@@ -35,5 +35,7 @@
 	"fecha":"Fehca",
 	"capasidad":"Capasidad",
 	"libres":"Libres",
-	"detalles":"Detalles"
+	"detalles":"Detalles",
+	"titulo_job":"Titulo del Empleo",
+	"localidad":"Localidad"
 }

@@ -1,0 +1,12 @@
+<section>
+	<?php foreach ($arr as $key => $value):?>
+		<article>
+			<h4><?=$value['nombre_recurso']?></h4>
+			<a href="<?=$value['direccion_recurso']?>" target="_blank"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a>
+			<p>				
+				<?= $value['resumen_recurso']?>
+			</p>
+			
+		</article>
+	<?php endforeach;?>
+</section>

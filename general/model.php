@@ -59,5 +59,38 @@
 			$sea = $this->fetch_array($query);
 			return $sea;
 		}
+		public function rec($var = 3){
+			$query = $this->consulta("SELECT * FROM recursos_aprotec WHERE permiso_recurso <= '$var';");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;			
+				}
+				return $data;
+			}else{	
+				return '';
+			}
+		}
+		public function jobs(){
+			$query = $this->consulta("SELECT id_job, titulo_job, fecha_job, localidad_job FROM jobs_aprotec WHERE estado_job = '1';");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;			
+				}
+				return $data;
+			}else{	
+				return '';
+			}
+		}
+		public function job($url){
+			$query = $this->consulta("SELECT * FROM jobs_aprotec WHERE id_job = '$url' AND estado_job = '1';");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;			
+				}
+				return $data;
+			}else{	
+				return '';
+			}
+		}
 	}
 ?>
