@@ -21,7 +21,8 @@
 			}
 		}
 		public function index(){
-			$post = $this->data->noticias();
+			$post['noticias'] = $this->data->noticias();
+			$post['slider'] = $this->data->slider();
 			return render_to_response(vista::index($post));
 		}
 		public function page($html,$titulo){
@@ -37,6 +38,11 @@
 		}
 		public function miperfil(){
 			if ($_SESSION['user']) {
+				if ($_POST){
+					
+				}else{
+					return render_to_response(vista::page('miperfil.html',"Mi perfil"));
+				}
 			}else{
 				return render_to_response(vista::page('login2.html','Mi perfil'));
 			}
@@ -75,6 +81,15 @@
 		}
 		public function reg_oferta(){
 			if ($_SESSION['user']) {
+				if ($_SESSION['estado'] == 3) {
+					if ($_POST) {
+						print_r($_POST);
+					}else{
+						return render_to_response(vista::page('reg-job.html','[reg-of]'));
+					}
+				}else{
+					return render_to_response(vista::page('notpage.html','Esta paguina no es para ti.'));
+				}
 			}else{
 				return render_to_response(vista::page('login2.html','Registrar Oferta de trabajo'));
 			}

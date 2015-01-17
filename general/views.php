@@ -7,10 +7,10 @@
 			$valores = [
 			'Title' => ":: [Aprotec] - Inicio ::",
 			'header' => load_page("general/static/header.html"),
-			'slider' => load_page("general/static/slider.html"),
+			'slider' => dinamic("general/static/slider.html",$arr['slider']),
 			'barra-lateral' => load_page("general/static/lateral.html"),
 			'form-log' => dinamic("general/static/login.html"),
-			'container' => dinamic("general/static/news.html",$arr),
+			'container' => dinamic("general/static/news.html",$arr['noticias']),
 			'footer' => load_page("general/static/footer.html")
 			];
 			$templad = load_page("main/templates/principal.html");

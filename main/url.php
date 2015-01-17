@@ -1,5 +1,10 @@
 <?php
 	switch ($objects["principal"]->url_p(URL_short())) {
+		/**
+		*Url del sistema.
+		*Paguinas principales y cosas que los usuarios pueden ver
+		*e interactuar con ellas.
+		**/
 		default:{$objects['principal']->page('404.html','Error 404');}break;
 		case '/':{$objects['principal']->index();}break;
 		case 'quinesomos':{$objects['principal']->page('quienessomos.html','Quines Somos');}break;
@@ -16,5 +21,16 @@
 		case 'news':{$objects['principal']->news();}break;
 		case 'destroy':{$objects['principal']->destroy();}break;
 		case 'recursos':{$objects['principal']->recursos();}break;
+		/**
+		*Url del CMD.
+		*Paguinas que solo los administradores del contenido van a poder ver
+		*y son por las cuales se podra editar el contenido del sistema para
+		*poder actualizarlo como sea devido.
+		**/
+
+		/**
+		*Url de las clases.
+		*App sacada de learningWor
+		**/
 	}
 ?>

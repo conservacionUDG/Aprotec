@@ -92,5 +92,16 @@
 				return '';
 			}
 		}
+		public function slider(){
+			$query = $this->consulta("SELECT * FROM slider_aprotec WHERE estado_slider = '1' ORDER BY orden_slider ASC;");
+			if($this->numero_de_filas($query) > 0){
+				while ( $tsArray = $this->fetch_assoc($query) ) {
+					$data[] = $tsArray;			
+				}
+				return $data;
+			}else{	
+				return '';
+			}
+		}
 	}
 ?>
