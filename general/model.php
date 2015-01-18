@@ -103,5 +103,16 @@
 				return '';
 			}
 		}
+		public function perfil($id){
+			$query = $this->consulta("SELECT * FROM perfiles_aprotec WHERE user_perfil = ' $id'");
+			$sea = $this->fetch_array($query);
+			return $sea;
+		}
+		public function inserPerfil($id){
+			$this->consulta("INSERT INTO perfiles_aprotec (user_perfil) VALUES('$id')" );
+		}
+		public function guardar_job($arr){
+			$this->consulta("INSERT INTO jobs_aprotec (titulo_job,)");
+		}
 	}
 ?>

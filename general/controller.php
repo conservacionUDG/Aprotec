@@ -41,7 +41,13 @@
 				if ($_POST){
 					
 				}else{
-					return render_to_response(vista::page('miperfil.html',"Mi perfil"));
+					$dato = $this->data->perfil($_SESSION['id']);
+					if ($dato != '') {
+						return render_to_response(vista::page('miperfil.html',"Mi perfil",$dato));
+					}else{
+						$this->data->inserPerfil($_SESSION['id']);
+						return HttpResponse('index.php/miperfil/');
+					}	
 				}
 			}else{
 				return render_to_response(vista::page('login2.html','Mi perfil'));
@@ -83,7 +89,7 @@
 			if ($_SESSION['user']) {
 				if ($_SESSION['estado'] == 3) {
 					if ($_POST) {
-						print_r($_POST);
+						$this->data->guardar_job($_POST);
 					}else{
 						return render_to_response(vista::page('reg-job.html','[reg-of]'));
 					}
