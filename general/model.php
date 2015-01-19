@@ -27,6 +27,14 @@
 			$sea = $this->fetch_array($query);
 			return $sea;
 		}
+		public function verifica2($pw,$user){
+			$query = $this->consulta("SELECT CASE WHEN EXISTS (
+							SELECT * FROM `user` WHERE user_user = '$user' AND pw_user = '$pw') 
+					THEN CAST(1 AS binary)
+					ELSE CAST(0 AS binary) END");
+			$sea = $this->fetch_array($query);
+			return $sea;
+		}
 		public function noticias($inicio = 0, $fin = 5){
 			$query = $this->consulta("SELECT id_post, titulo_post, balazo_post FROM post_aprotec WHERE estado_post = '1' ORDER BY id_post DESC LIMIT $inicio , $fin;");
 			if($this->numero_de_filas($query) > 0){
@@ -114,6 +122,15 @@
 		public function guardar_job($arr){
 			$this->consulta("INSERT INTO jobs_aprotec (titulo_job,pais_job,localidad_job,salario_job,moneda_job,tiempo_job,duracion_job,meces_job,actividad_job,experiencia_job,empresa_job,contacto_job,telconta_job,email_job,estado_job) 
 						VALUES ('$arr[titulo_job]','$arr[pais]','$arr[localidad]','$arr[salario]','$arr[moneda]','$arr[tiempo]','$arr[duraccion]','$arr[meces]','$arr[actividades]','$arr[expetiencia]','$arr[empresa]','$arr[contacto]','$arr[tcontacto]','$arr[emailContacto]','2')");
+		}
+		public function acpassword($pw,$id){
+			$this->consulta("UPDATE user SET pw_user = '$pw' WHERE id_user = '$id'");
+		}
+		public function acredes($arr,$id){
+			$this->consulta("UPDATE perfiles_aprotec SET facebook_perfil = '$arr[face]', twitter_perfil = '$arr[twitter]', linkedin_perfil = '$arr[linkedin]' WHERE user_perfil = '$id' ");
+		}
+		public function acgeneral($arr,$id){
+			$this->consulta("UPDATE perfiles_aprotec SET name_perfil = '$arr[name]', appaterno_perfil = '$arr[ap_p]', apmaterno_perfil = '$arr[ap_m]', pais_perfil = '$arr[pais]',localidad_perfil = '$arr[localidad]',nacimiento_perfil = '$arr[fehca]', web_perfil = '$arr[web]' WHERE user_perfil = '$id' ");
 		}
 	}
 ?>

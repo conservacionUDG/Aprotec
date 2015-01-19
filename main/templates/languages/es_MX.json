@@ -67,5 +67,8 @@
 	"indefinida":"Indefinida",
 	"agregar_job":"Agregar Empleo",
 	"save_job":"Solicitud enviada",
-	"save_job1":"En espera de aprobaccion"
+	"save_job1":"En espera de aprobaccion",
+	"old_password":"Contraseña anterior",
+	"fecha nacimiento":"Fecha de nacimiento",
+	"web personal":"Web personal"
 }

@@ -26,7 +26,7 @@
 	<div class="tab-content">
 		<div role="tabpanel" class="tab-pane active" id="dgeneral">
 			
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="POST" action="index.php/miperfil/dgeneral">
   				<div class="form-group">
     				<label class="col-sm-2 control-label">[name]</label>
     				<div class="col-sm-10">
@@ -36,105 +36,80 @@
   				<div class="form-group">
     				<label class="col-sm-2 control-label">[ap_paterno]</label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" name="name" placeholder="<?= $arr['appaterno_perfil']?>">
+      					<input type="text" class="form-control" name="ap_p" placeholder="<?= $arr['appaterno_perfil']?>">
     				</div>
   				</div>
   				<div class="form-group">
     				<label class="col-sm-2 control-label">[ap_materno]</label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" name="name" placeholder="<?= $arr['apmaterno_perfil']?>">
+      					<input type="text" class="form-control" name="ap_m" placeholder="<?= $arr['apmaterno_perfil']?>">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label class="col-sm-2 control-label">[pais]</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" name="pais" placeholder="<?= $arr['pais_perfil']?>">
     				</div>
   				</div>
   				<div class="form-group">
     				<label class="col-sm-2 control-label">[localidad]</label>
     				<div class="col-sm-10">
-      					<input type="text" class="form-control" name="name" placeholder="<?= $arr['localidad_perfil']?>">
+      					<input type="text" class="form-control" name="localidad" placeholder="<?= $arr['localidad_perfil']?>">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label class="col-sm-2 control-label">[fecha nacimiento]</label>
+    				<div class="col-sm-10">
+      					<input type="date" class="form-control" name="fecha" placeholder="<?= $arr['nacimiento_perfil']?>">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label class="col-sm-2 control-label">[web personal]</label>
+    				<div class="col-sm-10">
+      					<input type="url" class="form-control" name="web" placeholder="<?= $arr['web_perfil']?>">
     				</div>
   				</div>
 
 
-			  	<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-			    	<div class="col-sm-10">
-			      		<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-			    	</div>
-			  	</div>
+			  	
 			  	<div class="form-group">
 			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<div class="checkbox">
-			        		<label>
-			          			<input type="checkbox"> Remember me
-			        		</label>
-			      		</div>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<button type="submit" class="btn btn-default">Sign in</button>
+			      		<button type="submit" class="btn btn-default">[enviar]</button>
 			    	</div>
 			  	</div>
 			</form>
 
 		</div>
 		<div role="tabpanel" class="tab-pane" id="dprofecional">
-			
-			<form class="form-horizontal">
-  				<div class="form-group">
-    				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    				<div class="col-sm-10">
-      					<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-    				</div>
-  				</div>
-			  	<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-			    	<div class="col-sm-10">
-			      		<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<div class="checkbox">
-			        		<label>
-			          			<input type="checkbox"> Remember me
-			        		</label>
-			      		</div>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<button type="submit" class="btn btn-default">Sign in</button>
-			    	</div>
-			  	</div>
-			</form>
+			<h3 class="text-center">----Proxima mente----</h3>
 
 		</div>
 		<div role="tabpanel" class="tab-pane" id="redesSociales">
 			
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="POST" action="index.php/miperfil/Sociales/">
   				<div class="form-group">
-    				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    				<label class="col-sm-2 control-label">Facebook:</label>
     				<div class="col-sm-10">
-      					<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      					<input type="url" class="form-control" name="face" placeholder="<?=$arr['facebook_perfil']?>">
     				</div>
   				</div>
-			  	<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-			    	<div class="col-sm-10">
-			      		<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-			    	</div>
-			  	</div>
+  				<div class="form-group">
+    				<label class="col-sm-2 control-label">Twitter</label>
+    				<div class="col-sm-10">
+      					<input type="url" class="form-control" name="twitter" placeholder="<?=$arr['twitter_perfil']?>">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label class="col-sm-2 control-label">Linkedin</label>
+    				<div class="col-sm-10">
+      					<input type="url" class="form-control" name="linkedin" placeholder="<?=$arr['linkedin_perfil']?>">
+    				</div>
+  				</div>
+			  	
+			  	
 			  	<div class="form-group">
 			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<div class="checkbox">
-			        		<label>
-			          			<input type="checkbox"> Remember me
-			        		</label>
-			      		</div>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<button type="submit" class="btn btn-default">Sign in</button>
+			      		<button type="submit" class="btn btn-default">[enviar]</button>
 			    	</div>
 			  	</div>
 			</form>
@@ -142,31 +117,28 @@
 		</div>
 		<div role="tabpanel" class="tab-pane" id="cpassword">
 
-			<form class="form-horizontal">
-  				<div class="form-group">
-    				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    				<div class="col-sm-10">
-      					<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-    				</div>
-  				</div>
+			<form class="form-horizontal" method="POST" action="index.php/miperfil/password">
 			  	<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+			    	<label class="col-sm-2 control-label">[old_password]</label>
 			    	<div class="col-sm-10">
-			      		<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+			      		<input type="password" class="form-control" name="oldPassword" placeholder="[old_password]">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label class="col-sm-2 control-label">[Password]</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" name="password" placeholder="[Password]">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label class="col-sm-2 control-label">[repetir] [Password]</label>
+			    	<div class="col-sm-10">
+			      		<input type="password" class="form-control" name="password2" placeholder="[repetir] [Password]">
 			    	</div>
 			  	</div>
 			  	<div class="form-group">
 			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<div class="checkbox">
-			        		<label>
-			          			<input type="checkbox"> Remember me
-			        		</label>
-			      		</div>
-			    	</div>
-			  	</div>
-			  	<div class="form-group">
-			    	<div class="col-sm-offset-2 col-sm-10">
-			      		<button type="submit" class="btn btn-default">Sign in</button>
+			      		<button type="submit" class="btn btn-default">[enviar]</button>
 			    	</div>
 			  	</div>
 			</form>

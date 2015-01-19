@@ -1,14 +1,11 @@
 <?php
 	class principal{
 		var $data;
-		function __construct()
-		{
+		function __construct(){
 			$this->data = new general();
 		}
-
 		public function url_p($url){
 			global $url_array;
-
 			$url_array = explode('/', $url);
 			if ($url_array[0] == '' and !$url_array[1]) {
 				return '/';
@@ -37,9 +34,34 @@
 			}
 		}
 		public function miperfil(){
+			global $url_array;
 			if ($_SESSION['user']) {
 				if ($_POST){
-					
+					switch ($url_array[2]) {
+						case 'password':
+							if ($_POST['password'] == $_POST['password2']) {
+								$can = $this->data->verifica2($_POST['oldPassword'],$_SESSION['user']);
+								if ($can[0] == 1) {
+									$this->data->acpassword($_POST['password'],$_SESSION['id']);
+								}else{
+									echo "Error";
+								}
+							}else{
+								echo "Error";
+							}
+						break;
+						case 'Sociales':
+							$this->data->acredes($_POST, $_SESSION['id']);
+						break;
+						case 'dgeneral':
+							$this->data->acgeneral($_POST, $_SESSION['id']);
+						break;
+						
+						default:
+							return HttpResponse('index.php/miperfil/');
+							break;
+					}
+					return HttpResponse('index.php/miperfil/');
 				}else{
 					$dato = $this->data->perfil($_SESSION['id']);
 					if ($dato != '') {
@@ -167,8 +189,7 @@
 			}
 			return render_to_response(vista::page('empresas-confian.html','Empresas que confian',$dato));		
 		}
-		public function recursos()
-		{
+		public function recursos(){
 			if ($_SESSION['user']) {
 				if ($_SESSION['estado'] == 1) {
 					$datos = $this->data->rec(2);
