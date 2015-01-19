@@ -112,7 +112,8 @@
 			$this->consulta("INSERT INTO perfiles_aprotec (user_perfil) VALUES('$id')" );
 		}
 		public function guardar_job($arr){
-			$this->consulta("INSERT INTO jobs_aprotec (titulo_job,)");
+			$this->consulta("INSERT INTO jobs_aprotec (titulo_job,pais_job,localidad_job,salario_job,moneda_job,tiempo_job,duracion_job,meces_job,actividad_job,experiencia_job,empresa_job,contacto_job,telconta_job,email_job,estado_job) 
+						VALUES ('$arr[titulo_job]','$arr[pais]','$arr[localidad]','$arr[salario]','$arr[moneda]','$arr[tiempo]','$arr[duraccion]','$arr[meces]','$arr[actividades]','$arr[expetiencia]','$arr[empresa]','$arr[contacto]','$arr[tcontacto]','$arr[emailContacto]','2')");
 		}
 	}
 ?>

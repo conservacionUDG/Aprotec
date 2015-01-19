@@ -90,6 +90,7 @@
 				if ($_SESSION['estado'] == 3) {
 					if ($_POST) {
 						$this->data->guardar_job($_POST);
+						return render_to_response(vista::page('save_job.html','[save_job]'));
 					}else{
 						return render_to_response(vista::page('reg-job.html','[reg-of]'));
 					}

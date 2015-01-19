@@ -65,5 +65,7 @@
 	"freelance":"Freelance",
 	"definida":"Definida",
 	"indefinida":"Indefinida",
-	"agregar_job":"Agregar Empleo"
+	"agregar_job":"Agregar Empleo",
+	"save_job":"Solicitud enviada",
+	"save_job1":"En espera de aprobaccion"
 }
