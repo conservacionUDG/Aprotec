@@ -21,7 +21,7 @@
           <?php endif;?>
               <img src="<?= $value['img_slider']?>" class="img-slider" alt="<?= $value['text_slider']?>">
               <div class="carousel-caption">
-                <a href="<?= $value['url_slider']?>"><?= $value['text_slider']?></a>
+                <a href="<?= $value['url_slider']?>"><?= utf8_encode ( $value['text_slider'])?></a>
               </div>
             </div>
         <?php endforeach;?>   

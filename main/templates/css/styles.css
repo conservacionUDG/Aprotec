@@ -104,3 +104,8 @@ background-position:top center;
 .tab-content{
     margin: 15px 20px;
 }
+.img-post{
+    width: 300px;
+    height: 300px;
+    margin: 3px;
+}

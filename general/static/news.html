@@ -1,7 +1,7 @@
 <h2 class="text-center">[news]</h2><hr>
 <?php foreach ($arr as $key => $value):?>
-	<h3><?= $value['titulo_post']?></h3>
-	<p><?= $value['balazo_post']?></p>
+	<h3><?=utf8_encode ($value['titulo_post'])?></h3>
+	<p><?= utf8_encode ($value['balazo_post'])?></p>
 	<a href="index.php/news/<?=$value['id_post']?>" type="button" class="btn btn-info btn-xs">[leer+]</a>
 <?php endforeach;?>
 <br><br>

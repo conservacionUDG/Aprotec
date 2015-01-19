@@ -162,7 +162,7 @@
 			if ($url_array[2]) {
 				$post = $this->data->nota($url_array[2]);
 				if ($post != '') {
-					return render_to_response(vista::page('new.html',$post['tiulo_post'],$post));
+					return render_to_response(vista::page('new.html',utf8_encode ($post['titulo_post']),$post));
 				}else{
 					return render_to_response(vista::page('404.html','Error 404'));
 				}
