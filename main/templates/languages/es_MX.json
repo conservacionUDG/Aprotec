@@ -70,5 +70,12 @@
 	"save_job1":"En espera de aprobaccion",
 	"old_password":"Contraseña anterior",
 	"fecha nacimiento":"Fecha de nacimiento",
-	"web personal":"Web personal"
+	"web personal":"Web personal",
+	"job":"Empleo",
+	"solicitar":"Solicitar",
+	"soli_job":"Presentar solicitud",
+	"tipo":"Tipo",
+	"cuerpo_evento":"Descripccion del evento",
+	"asistir_evento":"Solicitar asistencia al evento",
+	"asistir":"Asistir"
 }

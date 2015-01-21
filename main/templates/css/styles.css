@@ -109,3 +109,10 @@ background-position:top center;
     height: 300px;
     margin: 3px;
 }
+.beta-alert{
+    position: fixed;
+    z-index: 1;
+    margin-top: 15px;
+    margin-left: 75%;
+    margin-right: 5px;
+}

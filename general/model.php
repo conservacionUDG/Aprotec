@@ -91,14 +91,8 @@
 		}
 		public function job($url){
 			$query = $this->consulta("SELECT * FROM jobs_aprotec WHERE id_job = '$url' AND estado_job = '1';");
-			if($this->numero_de_filas($query) > 0){
-				while ( $tsArray = $this->fetch_assoc($query) ) {
-					$data[] = $tsArray;			
-				}
-				return $data;
-			}else{	
-				return '';
-			}
+			$sea= $this->fetch_array($query);
+				return $sea;
 		}
 		public function slider(){
 			$query = $this->consulta("SELECT * FROM slider_aprotec WHERE estado_slider = '1' ORDER BY orden_slider ASC;");
@@ -131,6 +125,13 @@
 		}
 		public function acgeneral($arr,$id){
 			$this->consulta("UPDATE perfiles_aprotec SET name_perfil = '$arr[name]', appaterno_perfil = '$arr[ap_p]', apmaterno_perfil = '$arr[ap_m]', pais_perfil = '$arr[pais]',localidad_perfil = '$arr[localidad]',nacimiento_perfil = '$arr[fehca]', web_perfil = '$arr[web]' WHERE user_perfil = '$id' ");
+		}
+		public function grabarJob($user,$empleo){
+			$this->consulta("INSERT INTO solicitudJob_aprotec (user_sJob,job_sJob) VALUES('$user','$empleo')" );
+		}
+		public function asistEvento($user,$evento){
+			$this->consulta("INSERT INTO asistenciaEv_aprotec (user_aEv,evento_aEv) VALUES('$user','$evento')" );
+			$this->consulta("UPDATE eventos_aprotec SET libres_evento = libres_evento-1 WHERE id_evento = '$evento'");
 		}
 	}
 ?>

@@ -1,2 +1,18 @@
-<?= print_r($arr)?>
-<h2> <?= $arr['name_evento']?></h2>
+<h3 class="text-center"> <?= $arr['name_evento']?></h3>
+<dl class="dl-horizontal">
+  <dt>[fecha]</dt>
+  <dd><?= $arr['fecha_evento']?></dd>
+  <dt>[tipo]</dt>
+  <dd><?= $arr['tipo_evento']?></dd>
+  <dt>[cuerpo_evento]</dt>
+  <dd><?= $arr['cuerpo_evento']?></dd>
+  
+</dl><br>
+<form action="" method="GET">
+	<div class="checkbox">
+    	<label>
+      		<input type="checkbox" name="p" value="si" required> [asistir_evento]
+    	</label>
+  	</div>
+	<button type="submit" class="btn btn-default">[asistir]</button>
+</form><br><br>

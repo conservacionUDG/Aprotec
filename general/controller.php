@@ -77,7 +77,10 @@
 		}
 		public function eventos(){
 			global $url_array;
-			if ($_SESSION['user']) {
+			if($_GET){
+				$this->data->asistEvento($_SESSION['id'],$url_array[2]);
+				return HttpResponse('index.php/');
+			}elseif ($_SESSION['user']) {
 				if ($url_array[2]) {
 					$dat = $this->data->consult($url_array[2]);
 					return render_to_response(vista::page('evento.html',$dat['name_evento'],$dat));
@@ -91,7 +94,10 @@
 		}
 		public function jobs(){
 			global $url_array;
-			if ($_SESSION['user']) {
+			if($_GET){
+				$this->data->grabarJob($_SESSION['id'],$url_array[2]);
+				return HttpResponse('index.php/');
+			}elseif ($_SESSION['user']) {
 				if ($url_array[2]) {
 					$dato = $this->data->job($url_array[2]);
 					if ($dato != '') {
