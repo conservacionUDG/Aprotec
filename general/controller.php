@@ -44,10 +44,10 @@
 								if ($can[0] == 1) {
 									$this->data->acpassword($_POST['password'],$_SESSION['id']);
 								}else{
-									echo "Error";
+									echo "Error :D";
 								}
 							}else{
-								echo "Error";
+								echo "Error :D";
 							}
 						break;
 						case 'Sociales':
