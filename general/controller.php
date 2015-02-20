@@ -209,5 +209,8 @@
 				return render_to_response(vista::page('recursos.html','Recursos disponibles',$datos));
 			}
 		}
+		public function system_off($html){
+			return render_to_response('Systema en mantenimiento');
+		}
 	}
 ?>
