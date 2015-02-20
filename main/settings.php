@@ -1,4 +1,5 @@
 <?php
+    global $conf_host;
     $activate = TRUE;
     
     $data_base = TRUE;
@@ -8,6 +9,10 @@
         define('pw', 'norman95');
         define('db', 'aprotec');
 
+    $conf_host = [
+      'host' => 'http://localhost/Aprotec/',
+      'lang' => 'es'
+    ];
     $INSTALLED_APPS = [
     "general"
     ];
