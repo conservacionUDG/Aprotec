@@ -2,8 +2,7 @@
 	class vista{
 		function __construct(){
 		}
-		public static function index($arr = null)
-		{
+		public static function index($arr = null){
 			$valores = [
 			'Title' => ":: [Aprotec] - Inicio ::",
 			'header' => load_page("general/static/header.html"),
@@ -17,8 +16,7 @@
 			$mostrar = remplas($valores,$templad);
 			return $mostrar;
 		}
-		public static function page($html, $titulo ,$arr = null)
-		{
+		public static function page($html, $titulo ,$arr = null){
 			$valores = [
 			'Title' => ":: [Aprotec] - ".$titulo." ::",
 			'header' => load_page("general/static/header.html"),

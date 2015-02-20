@@ -27,7 +27,7 @@
 		*y son por las cuales se podra editar el contenido del sistema para
 		*poder actualizarlo como sea devido.
 		**/
-
+		case 'CMD':{$objects['cmd']->index();}break;
 		/**
 		*Url de las clases.
 		*App sacada de learningWor
