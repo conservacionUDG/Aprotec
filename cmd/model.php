@@ -4,7 +4,7 @@
 			parent::__construct();
 		}
 		public function login($user){
-			$query = $this->consulta("SELECT * FROM user WHERE user_user = '$user' OR correo_user = '$user' ");
+			$query = $this->consulta("SELECT * FROM user_aproteccmd WHERE name_usercmd = '$user'");
 			$sea= $this->fetch_array($query);
 				return $sea;
 		}

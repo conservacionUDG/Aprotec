@@ -28,6 +28,12 @@
 		*poder actualizarlo como sea devido.
 		**/
 		case 'CMD':{$objects['cmd']->index();}break;
+		case 'aNot':{$objects['cmd']->adnot();}break;
+		case 'aEven':{$objects['cmd']->adeven();}break;
+		case 'pNot':{$objects['cmd']->punot();}break;
+		case 'aSlider':{$objects['cmd']->adslider();}break;
+		case 'lMsn':{$objects['cmd']->lmsn();}break;
+		case 'aRec':{$objects['cmd']->adrec();}break;
 		/**
 		*Url de las clases.
 		*App sacada de learningWor

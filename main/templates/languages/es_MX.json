@@ -77,5 +77,13 @@
 	"tipo":"Tipo",
 	"cuerpo_evento":"Descripccion del evento",
 	"asistir_evento":"Solicitar asistencia al evento",
-	"asistir":"Asistir"
+	"asistir":"Asistir",
+	"entrar":"Entrar",
+	"user":"User",
+	"aNot":"Admin Notas",
+	"aEven":"Admin Eventos",
+	"pNot":"Nueva Nota",
+	"aSlider":"Admin Slider",
+	"lMsn":"Mensajes",
+	"aRec":"Admin Recursos"
 }
