@@ -48,6 +48,8 @@ body {
   vertical-align: top;
 }
 .cover-container {
+  padding-left: 2%;
+  padding-right: 2%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -134,11 +136,9 @@ body {
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
     top: 0;
   }
   .mastfoot {
-    position: fixed;
     bottom: 0;
   }
   /* Start the vertical centering */
@@ -157,7 +157,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 800px;
+    width: 950px;
   }
 }
 
@@ -194,4 +194,7 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.text-cover{
+  color: #000;
 }

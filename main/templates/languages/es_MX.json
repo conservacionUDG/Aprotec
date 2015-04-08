@@ -85,5 +85,14 @@
 	"pNot":"Nueva Nota",
 	"aSlider":"Admin Slider",
 	"lMsn":"Mensajes",
-	"aRec":"Admin Recursos"
+	"aRec":"Admin Recursos",
+	"title_post":"Titulo de la entrada",
+	"body_post":"Contenido del Post",
+	"Estado":"Estado",
+	"estado_post1":"Borrador",
+	"estado_post2":"Pendiente de aprobaccion",
+	"estado_post3":"Publicado",
+	"balazo_post":"Balazo del Post",
+	"autor":"Autor",
+	"aAr":"Admin Archivos"
 }

@@ -31,7 +31,13 @@
 			return render_to_response(views_cmd::page('adeven.html'));
 		}
 		public function punot(){
-			return render_to_response(views_cmd::page('punot.html'));
+			if ($_POST) {				
+				$fecha = date("Y-m-d");
+				$this->data->postSave($_POST,$_SESSION['id'],$fecha);
+				return HttpResponse('index.php/aNot/');
+			} else {
+				return render_to_response(views_cmd::page('punot.html'));
+			}
 		}
 		public function adslider(){
 			return render_to_response(views_cmd::page('adslider.html'));

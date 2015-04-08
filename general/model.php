@@ -47,7 +47,9 @@
 			}
 		}
 		public function nota($id_nota){
-			$query = $this->consulta("SELECT titulo_post, contenido_post, autor_post, fecha_post FROM post_aprotec WHERE id_post = '$id_nota' AND estado_post = '1' ");
+			$query = $this->consulta("SELECT titulo_post, contenido_post, name_usercmd, fecha_post FROM post_aprotec 
+										INNER JOIN user_aproteccmd ON autor_post = id_usercmd
+										WHERE id_post = '$id_nota' AND estado_post = '1' ");
 			$sea = $this->fetch_array($query);
 			return $sea;
 		}

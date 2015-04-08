@@ -1,1 +1,26 @@
-punot.html
+<div class="panel panel-success">
+	<div class="panel-heading"><h4>[pNot]</h4></div>
+	<div class="panel-body">
+    	<form method="POST" action="">
+    		<div class="form-group">
+                <input type="text" name="title" placeholder="[title_post]" class="form-control" required>
+            </div>
+            <div class="from-group">
+                <textarea name="balazo" style="width:100; height:100px;" placeholder="[balazo_post]"class="form-control" required></textarea>
+            </div><br>
+            <div class="form-group">
+                {op}
+                <textarea id="textarea-msn" name="contenido" style="width:300; height:300px;" placeholder="[body_post]"class="form-control" required></textarea>
+            </div>
+            <div class="form-group text-cover">
+                <label>[Estado]</label>
+                <select name="op" class="form-control" required>
+                	<option value="1">[estado_post1]</option>
+                	<option value="2">[estado_post2]</option>
+                	<option value="3">[estado_post3]</option>
+                </select>
+            </div>
+             <button type="submit" class="btn btn-primary">[enviar]</button>
+    	</form>
+  	</div>
+</div>
