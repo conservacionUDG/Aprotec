@@ -1,7 +1,15 @@
-<h2 class="text-center">[news]</h2><hr>
-<?php foreach ($arr as $key => $value):?>
-	<h3><?=utf8_encode ($value['titulo_post'])?></h3>
-	<p><?= utf8_encode ($value['balazo_post'])?></p>
-	<a href="index.php/news/<?=$value['id_post']?>" type="button" class="btn btn-info btn-xs">[leer+]</a>
-<?php endforeach;?>
-<br><br>
+<?php$i=0;?>
+<div>
+	<h2 class="text-center">[news]</h2><hr>
+	<?php foreach ($arr as $key => $value):?>
+		<h3><?=utf8_encode ($value['titulo_post'])?></h3>
+		<p><?= utf8_encode ($value['balazo_post'])?></p>
+		<a href="index.php/news/<?=$value['id_post']?>" type="button" class="btn btn-info btn-xs">[leer+]</a>
+		<?php $i++;?>
+	<?php endforeach;?>
+	<hr>
+	<?php if($i==5):?>
+		<a href="index.php/news/?news=<?=$_GET['news']+5?>"><p id="next_new">Siguientes-></p></a>
+	<?php endif;?>
+	<br><br>
+</div>

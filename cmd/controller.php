@@ -33,6 +33,9 @@
 		public function punot(){
 			if ($_POST) {				
 				$fecha = date("Y-m-d");
+				$_POST['title'] = utf8_decode($_POST['title']);
+				$_POST['balazo'] = utf8_decode($_POST['balazo']);
+				$_POST['contenido'] = utf8_decode($_POST['contenido']);
 				$this->data->postSave($_POST,$_SESSION['id'],$fecha);
 				return HttpResponse('index.php/aNot/');
 			} else {

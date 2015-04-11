@@ -173,7 +173,11 @@
 					return render_to_response(vista::page('404.html','Error 404'));
 				}
 			}else{
-				$post = $this->data->noticias();
+				if ($_GET)
+					$post = $this->data->noticias($_GET['news']);
+				else
+					$post = $this->data->noticias();
+
 				return render_to_response(vista::page('news.html','Noticias',$post));
 			}
 		}
